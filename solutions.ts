@@ -26,8 +26,15 @@
 //     }
 // }
 
-function formatCoordinate(coordinate: readonly [number, number, string]) {
-  const [latitude, longitude, locationName] = coordinate;
+// function formatCoordinate(coordinate: readonly [number, number, string]) {
+//   const [latitude, longitude, locationName] = coordinate;
 
-  return `location: ${locationName} ($${latitude}, ${longitude})`;
+//   return `location: ${locationName} ($${latitude}, ${longitude})`;
+// }
+
+
+
+function concatenateArrays<T>(...arrays: T[][]):T[]{
+return (([] as T[]).concat(...arrays))
 }
+
