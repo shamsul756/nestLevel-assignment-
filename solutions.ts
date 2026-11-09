@@ -32,9 +32,31 @@
 //   return `location: ${locationName} ($${latitude}, ${longitude})`;
 // }
 
+// function concatenateArrays<T>(...arrays: T[][]):T[]{
+// return (([] as T[]).concat(...arrays))
+// }
 
-
-function concatenateArrays<T>(...arrays: T[][]):T[]{
-return (([] as T[]).concat(...arrays))
+interface Course {
+  title: string;
+  students: number;
+  isPublished: boolean;
 }
+
+
+function getPopularCourses(
+    courses : Course[],
+   minStudents : number
+): Course[]{
+   return courses.filter((course) => {
+        return course.isPublished === true &&
+               course.students >= minStudents;
+    });
+}
+
+const courses = [
+  { title: "TypeScript Mastery", students: 120, isPublished: true },
+  { title: "Draft Course", students: 200, isPublished: false },
+  { title: "Basic HTML", students: 45, isPublished: true },
+  { title: "Next.js Pro", students: 85, isPublished: true }
+];
 
