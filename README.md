@@ -4,4 +4,5 @@ One of my biggest achievements is gaining confidence in writing code by hand wit
 I'm proud of this progress and excited to keep learning, practicing, and building stronger programming fundamentals.
 Small steps, consistent practice, and continuous improvement! 🚀
 
-![Uploading image.png…]()
+<img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/083b4f55-da22-4a76-a217-4651b3d9a1ed" />
+
