@@ -62,32 +62,38 @@
 //   { id: 3, name: "Tariq", role: "Subscriber" },
 // ];
 
-class Employee {
-  public name: string;
-  private baseSalary: number;
+// class Employee {
+//   public name: string;
+//   private baseSalary: number;
 
-  constructor(name: string, baseSalary: number) {
-    this.name = name;
-    this.baseSalary = baseSalary;
+//   constructor(name: string, baseSalary: number) {
+//     this.name = name;
+//     this.baseSalary = baseSalary;
+//   }
+
+//   getDetails() {
+//     console.log(`Employee: ${this.name}, Base Salary: ${this.baseSalary}`);
+//   }
+// }
+// class Manager extends Employee {
+//   public department: string;
+
+//   constructor(name: string, baseSalary: number, department: string) {
+//     super(name, baseSalary);
+//     this.department = department;
+//   }
+
+//   getRoleInfo() {
+//     return `Manager of ${this.department}: ${this.name}`;
+//   }
+// }
+
+async function validateAgeAsync(age: number): Promise<string> {
+  if (age >= 18) {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    return "Access Granted";
   }
-
-  getDetails() {
-    console.log(`Employee: ${this.name}, Base Salary: ${this.baseSalary}`);
+  else {
+    throw new Error("Access Denied: Must be 18 or older");
   }
 }
-class Manager extends Employee {
-  public department: string;
-
-  constructor(name: string, baseSalary: number, department: string) {
-    super(name, baseSalary);
-    this.department = department;
-  }
-
-  getRoleInfo() {
-    return `Manager of ${this.department}: ${this.name}`;
-  }
-}
-
-
-
-
