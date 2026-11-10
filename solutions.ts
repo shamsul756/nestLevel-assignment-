@@ -52,14 +52,42 @@
 //     });
 // }
 
-function pluckValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
-  return array.map((i) => i[key]);
+// function pluckValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
+//   return array.map((i) => i[key]);
+// }
+
+// const users = [
+//   { id: 1, name: "Rakib", role: "Admin" },
+//   { id: 2, name: "Sadia", role: "Editor" },
+//   { id: 3, name: "Tariq", role: "Subscriber" },
+// ];
+
+class Employee {
+  public name: string;
+  private baseSalary: number;
+
+  constructor(name: string, baseSalary: number) {
+    this.name = name;
+    this.baseSalary = baseSalary;
+  }
+
+  getDetails() {
+    console.log(`Employee: ${this.name}, Base Salary: ${this.baseSalary}`);
+  }
+}
+class Manager extends Employee {
+  public department: string;
+
+  constructor(name: string, baseSalary: number, department: string) {
+    super(name, baseSalary);
+    this.department = department;
+  }
+
+  getRoleInfo() {
+    return `Manager of ${this.department}: ${this.name}`;
+  }
 }
 
-const users = [
-  { id: 1, name: "Rakib", role: "Admin" },
-  { id: 2, name: "Sadia", role: "Editor" },
-  { id: 3, name: "Tariq", role: "Subscriber" },
-];
+
 
 
