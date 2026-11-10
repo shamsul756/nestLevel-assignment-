@@ -36,27 +36,30 @@
 // return (([] as T[]).concat(...arrays))
 // }
 
-interface Course {
-  title: string;
-  students: number;
-  isPublished: boolean;
+// interface Course {
+//   title: string;
+//   students: number;
+//   isPublished: boolean;
+// }
+
+// function getPopularCourses(
+//     courses : Course[],
+//    minStudents : number
+// ): Course[]{
+//    return courses.filter((course) => {
+//         return cou>rse.isPublished === true &&
+//                course.students >= minStudents;
+//     });
+// }
+
+function pluckValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
+  return array.map((i) => i[key]);
 }
 
-
-function getPopularCourses(
-    courses : Course[],
-   minStudents : number
-): Course[]{
-   return courses.filter((course) => {
-        return course.isPublished === true &&
-               course.students >= minStudents;
-    });
-}
-
-const courses = [
-  { title: "TypeScript Mastery", students: 120, isPublished: true },
-  { title: "Draft Course", students: 200, isPublished: false },
-  { title: "Basic HTML", students: 45, isPublished: true },
-  { title: "Next.js Pro", students: 85, isPublished: true }
+const users = [
+  { id: 1, name: "Rakib", role: "Admin" },
+  { id: 2, name: "Sadia", role: "Editor" },
+  { id: 3, name: "Tariq", role: "Subscriber" },
 ];
+
 
